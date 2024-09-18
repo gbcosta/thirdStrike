@@ -1,15 +1,17 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-import Menu from "../components/menu";
 import Personagens from "../pages/personagens";
+import Root from "./root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Menu />,
-  },
-  {
-    path: "personagens",
-    element: <Personagens />,
+    element: <Root />,
+    children: [
+      {
+        path: "/personagens",
+        element: <Personagens />,
+      },
+    ],
   },
 ]);
 
