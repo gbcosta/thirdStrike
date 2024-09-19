@@ -1,8 +1,9 @@
 import Characters from "../components/characters.tsx";
+import { KenGuide } from "./kenGuide.tsx";
 const Guides = () => {
   return (
     <div>
-      <Characters />
+      <Characters link={"/guides"} />
     </div>
   );
 };

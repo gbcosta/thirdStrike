@@ -7,7 +7,7 @@ const Menu = () => {
       </Link>
       <div className="flex flex-row ml-16 font-bold cursor-pointer gap-6">
         <Link to={"/guides"}>Guides</Link>
-        <Link to={"/Recursos"}>Recursos</Link>
+        <Link to={"/recursos"}>Recursos</Link>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ import necroImg from "../assets/necro-3so.jpg";
 import twelveImg from "../assets/twelve-3so.jpg";
 import urienImg from "../assets/urien-3so.jpg";
 import goukiImg from "../assets/akuma-3so.jpg";
+import { useNavigate } from "react-router-dom";
 
 const CharacterItem = ({
   img,
@@ -25,12 +26,14 @@ const CharacterItem = ({
 }: {
   img: string;
   name: string;
-  link?: string;
+  link: string;
 }) => {
+  const navigate = useNavigate();
   return (
     <div
       className="text-center gap-4 relative flex flex-col border-2 group
             justify-center items-center cursor-pointer"
+      onClick={() => navigate(`${link}/${name}`)}
     >
       <span
         className="text-white text-2xl absolute font-bold opacity-0 
@@ -44,55 +47,28 @@ const CharacterItem = ({
   );
 };
 
-interface CharactersProps {
-  links?: {
-    alex: string;
-    chun: string;
-    oro: string;
-    ryu: string;
-    yun: string;
-    yang: string;
-    ken: string;
-    makoto: string;
-    ibuki: string;
-    sean: string;
-    q: string;
-    hugo: string;
-    elena: string;
-    dudley: string;
-    remy: string;
-    necro: string;
-    twelve: string;
-    urien: string;
-    gouki: string;
-  };
-}
-const Characters = (props: CharactersProps) => {
+const Characters = ({ link }: { link: string }) => {
   return (
     <div className="grid grid-cols-10  gap-1 p-4 h-screen bg-zinc-900">
-      <CharacterItem img={alexImg} name="Alex" link={props.links?.alex} />
-      <CharacterItem
-        img={chunLiImage}
-        name="Chun Li"
-        link={props.links?.chun}
-      />
-      <CharacterItem img={ryuImg} name="Ryu" link={props.links?.ryu} />
-      <CharacterItem img={yunImg} name="Yun" link={props.links?.yun} />
-      <CharacterItem img={yangImg} name="Yang" link={props.links?.yang} />
-      <CharacterItem img={kenImg} name="Ken" link={props.links?.ken} />
-      <CharacterItem img={makotoImg} name="Makoto" link={props.links?.makoto} />
-      <CharacterItem img={ibukiImg} name="Ibuki" link={props.links?.ibuki} />
-      <CharacterItem img={seanImg} name="Sean" link={props.links?.sean} />
-      <CharacterItem img={qImg} name="Q" link={props.links?.q} />
-      <CharacterItem img={oroImg} name="Oro" link={props.links?.oro} />
-      <CharacterItem img={hugoImg} name="Hugo" link={props.links?.hugo} />
-      <CharacterItem img={elenaImg} name="Elena" link={props.links?.elena} />
-      <CharacterItem img={dudleyImg} name="Dudley" link={props.links?.dudley} />
-      <CharacterItem img={remyImg} name="Remy" link={props.links?.remy} />
-      <CharacterItem img={necroImg} name="Necro" link={props.links?.necro} />
-      <CharacterItem img={twelveImg} name="Twelve" link={props.links?.twelve} />
-      <CharacterItem img={urienImg} name="Urien" link={props.links?.urien} />
-      <CharacterItem img={goukiImg} name="Gouki" link={props.links?.gouki} />
+      <CharacterItem img={alexImg} name="Alex" link={link} />
+      <CharacterItem img={chunLiImage} name="Chun Li" link={link} />
+      <CharacterItem img={ryuImg} name="Ryu" link={link} />
+      <CharacterItem img={yunImg} name="Yun" link={link} />
+      <CharacterItem img={yangImg} name="Yang" link={link} />
+      <CharacterItem img={kenImg} name="Ken" link={link} />
+      <CharacterItem img={makotoImg} name="Makoto" link={link} />
+      <CharacterItem img={ibukiImg} name="Ibuki" link={link} />
+      <CharacterItem img={seanImg} name="Sean" link={link} />
+      <CharacterItem img={qImg} name="Q" link={link} />
+      <CharacterItem img={oroImg} name="Oro" link={link} />
+      <CharacterItem img={hugoImg} name="Hugo" link={link} />
+      <CharacterItem img={elenaImg} name="Elena" link={link} />
+      <CharacterItem img={dudleyImg} name="Dudley" link={link} />
+      <CharacterItem img={remyImg} name="Remy" link={link} />
+      <CharacterItem img={necroImg} name="Necro" link={link} />
+      <CharacterItem img={twelveImg} name="Twelve" link={link} />
+      <CharacterItem img={urienImg} name="Urien" link={link} />
+      <CharacterItem img={goukiImg} name="Gouki" link={link} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ErrorPage = () => {
   const error = useRouteError() as { error: { message: string } };
@@ -10,6 +11,9 @@ export const ErrorPage = () => {
         Sorry an unexpected error has occurred.
       </span>
       <span className="mt-4">{error.error.message}</span>
+      <Link className="mt-4 cursor-pointer font-bold" to="/">
+        Voltar
+      </Link>
     </div>
   );
 };

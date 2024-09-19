@@ -1,7 +1,9 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Root from "./root";
 import Guides from "../pages/guides";
 import { ErrorPage } from "../pages/error";
+import { MarkdownStyle } from "../components/markdownStyle";
+import KenGuide from "../pages/kenGuide.mdx";
 
 const router = createBrowserRouter([
   {
@@ -10,8 +12,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/Guides",
+        path: "/guides",
         element: <Guides />,
+      },
+      {
+        path: "/guides/ken",
+        element: (
+          <MarkdownStyle>
+            <KenGuide />
+          </MarkdownStyle>
+        ),
       },
     ],
   },
