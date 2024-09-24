@@ -6,9 +6,9 @@ const Menu = () => {
         3S
       </Link>
       <div className="flex flex-row ml-16 font-bold cursor-pointer gap-6">
-        <Link to={"/guides"}>Guides</Link>
-        <Link to={"/recursos"}>Recursos</Link>
-        <Link to={"/matchups"}>Matchups</Link>
+        <Link to={"/thirdStrike/guides"}>Guides</Link>
+        <Link to={"/thirdStrike/recursos"}>Recursos</Link>
+        <Link to={"/thirdStrike/matchups"}>Matchups</Link>
       </div>
     </div>
   );

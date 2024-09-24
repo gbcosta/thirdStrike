@@ -2,7 +2,7 @@ import Characters from "../components/characters.tsx";
 const Guides = () => {
   return (
     <div>
-      <Characters link={"/guides"} />
+      <Characters link={"/thirdStrike/guides"} />
     </div>
   );
 };
