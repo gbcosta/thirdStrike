@@ -108,7 +108,7 @@
   border-style: none;
   max-width: 100%;
   box-sizing: content-box;
-  background-color: #0d1117;
+  background-color: #18181b;
 }
 
 .markdown-body code,
@@ -529,7 +529,7 @@
 .markdown-body ul.no-list,
 .markdown-body ol.no-list {
   padding: 0;
-  list-style-type: none;
+  list-style-type: disc;
 }
 
 .markdown-body ol[type="a s"] {
@@ -546,6 +546,10 @@
 
 .markdown-body ol[type="I s"] {
   list-style-type: upper-roman;
+}
+
+.markdown-body ul {
+  list-style: disc;
 }
 
 .markdown-body ol[type="1"] {
