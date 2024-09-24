@@ -1,5 +1,4 @@
 import Characters from "../components/characters.tsx";
-import { KenGuide } from "./kenGuide.tsx";
 const Guides = () => {
   return (
     <div>
