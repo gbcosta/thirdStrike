@@ -8,7 +8,7 @@ import { Matchups } from "../pages/matchups";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/thirdStrike",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
