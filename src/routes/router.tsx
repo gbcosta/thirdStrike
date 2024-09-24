@@ -13,15 +13,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/guides",
+        path: "/thirdStrike/guides",
         element: <Guides />,
       },
       {
-        path: "/matchups",
+        path: "/thirdStrike/matchups",
         element: <Matchups />,
       },
       {
-        path: "/guides/ken",
+        path: "/thirdStrike/guides/ken",
         element: (
           <MarkdownStyle>
             <KenGuide />
