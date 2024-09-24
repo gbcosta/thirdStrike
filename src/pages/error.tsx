@@ -11,7 +11,7 @@ export const ErrorPage = () => {
         Sorry an unexpected error has occurred.
       </span>
       <span className="mt-4">{error.error.message}</span>
-      <Link className="mt-4 cursor-pointer font-bold" to="/">
+      <Link className="mt-4 cursor-pointer font-bold" to="/thirdStrike">
         Voltar
       </Link>
     </div>
