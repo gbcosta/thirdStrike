@@ -1,40 +1,97 @@
-import chunAvatar from "../assets/ch-avatar.jpeg";
-import yunAvatar from "../assets/yu-avatar.jpeg";
-import kenAvatar from "../assets/ke-avatar.jpeg";
-import makotoAvatar from "../assets/ma-avatar.jpeg";
-import dudleyAvatar from "../assets/du-avatar.jpeg";
-import yangAvatar from "../assets/ya-avatar.jpeg";
-import goukiAvatar from "../assets/go-avatar.jpeg";
-import urienAvatar from "../assets/ur-avatar.jpeg";
-import oroAvatar from "../assets/or-avatar.jpeg";
-import ryuAvatar from "../assets/ry-avatar.jpeg";
-import ibukiAvatar from "../assets/ib-avatar.jpeg";
-import elenaAvatar from "../assets/el-avatar.jpeg";
-import necroAvatar from "../assets/ne-avatar.jpeg";
-import hugoAvatar from "../assets/hu-avatar.jpeg";
-import alexAvatar from "../assets/al-avatar.jpeg";
-import qAvatar from "../assets/q-avatar.jpeg";
-import remyAvatar from "../assets/re-avatar.jpeg";
-import twelveAvatar from "../assets/tw-avatar.jpeg";
-import seanAvatar from "../assets/sean-avatar.jpeg";
+import chunAvatar from "../assets/chun-3s-avatar.png";
+import yunAvatar from "../assets/yun-3s-avatar.png";
+import kenAvatar from "../assets/ken-3s-avatar.png";
+import makotoAvatar from "../assets/makoto-3s-avatar.png";
+import dudleyAvatar from "../assets/dudley-3s-avatar.png";
+import yangAvatar from "../assets/yang-3s-avatar.png";
+import goukiAvatar from "../assets/akuma-3s-avatar.png";
+import urienAvatar from "../assets/urien-3s-avatar.png";
+import oroAvatar from "../assets/oro-3s-avatar.png";
+import ryuAvatar from "../assets/ryu-3s-avatar.png";
+import ibukiAvatar from "../assets/ibuki-3s-avatar.png";
+import elenaAvatar from "../assets/elena-3s-avatar.png";
+import necroAvatar from "../assets/necro-3s-avatar.png";
+import hugoAvatar from "../assets/hugo-3s-avatar.png";
+import alexAvatar from "../assets/alex-3s-avatar.png";
+import qAvatar from "../assets/q-3s-avatar.png";
+import remyAvatar from "../assets/remy-3s-avatar.png";
+import twelveAvatar from "../assets/twelve-3s-avatar.png";
+import seanAvatar from "../assets/sean-3s-avatar.png";
+
+import theRiddlerChart from "../utils/matchupData/theRiddler.json";
+import matsukenChart from "../utils/matchupData/matsuken.json";
+
+import { ChangeEvent, useState } from "react";
+
+/*enum CharactersEnum {
+  chun,
+  yun,
+  ken,
+  makoto,
+  dudleey,
+  yang,
+  urien,
+  gouki,
+  oro,
+  ryu,
+  ibuki,
+  elena,
+  necro,
+  hugo,
+  alex,
+  q,
+  remy,
+  twelve,
+  sean,
+}*/
+
+const charactersImages = [
+  chunAvatar,
+  yunAvatar,
+  kenAvatar,
+  makotoAvatar,
+  dudleyAvatar,
+  yangAvatar,
+  urienAvatar,
+  goukiAvatar,
+  oroAvatar,
+  ryuAvatar,
+  ibukiAvatar,
+  elenaAvatar,
+  necroAvatar,
+  hugoAvatar,
+  alexAvatar,
+  qAvatar,
+  remyAvatar,
+  twelveAvatar,
+  seanAvatar,
+];
 
 const CharacterAvatarHead = ({ src }: { src?: string }) => {
   return (
-    <th className="max-w-12 min-w-12">
-      <img src={src}></img>
+    <th className="p-0.5 cursor-pointer">
+      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
     </th>
   );
 };
 
 const CharacterAvatarCell = ({ src }: { src?: string }) => {
   return (
-    <td className="max-w-12 min-w-12">
-      <img src={src}></img>
+    <td className="p-0.5 cursor-pointer">
+      <img className="object-cover min-w-12 max-w-12 h-12" src={src}></img>
     </td>
   );
 };
 
-const MatchCell = ({ children }: { children: string }) => {
+const MatchupCell = ({
+  children,
+  //headCharacter,
+  //rowCharacter,
+}: {
+  children: string;
+  //headCharacter: number;
+  //rowCharacter: number;
+}) => {
   const getColor = (value: string) => {
     const valueNumber = Number(value);
     if (isNaN(valueNumber)) return "#cccccc";
@@ -48,465 +105,116 @@ const MatchCell = ({ children }: { children: string }) => {
   };
 
   return (
-    <td
-      style={{ background: getColor(children) }}
-      className="min-w-12 max-w-12 text-white text-center font-bold"
-    >
-      {children}
+    <td className="text-white text-center font-bold p-0.5 cursor-pointer hover:text-black">
+      <div
+        className="object-cover min-w-12 max-w-12 h-12 flex justify-center items-center font-bold"
+        style={{ backgroundColor: getColor(children) }}
+      >
+        {children}
+      </div>
     </td>
   );
 };
 
-export const Matchups = () => {
+const MatchTableRow = ({
+  data,
+  imgSrc,
+  //headCharacter,
+}: {
+  data: Array<string>;
+  imgSrc: string;
+  //headCharacter: number;
+}) => {
   return (
-    <div className="flex justify-center mt-4 mb-4">
-      <table>
-        <thead>
-          <tr>
-            <CharacterAvatarHead />
-            <CharacterAvatarHead src={chunAvatar} />
-            <CharacterAvatarHead src={yunAvatar} />
-            <CharacterAvatarHead src={kenAvatar} />
-            <CharacterAvatarHead src={makotoAvatar} />
-            <CharacterAvatarHead src={dudleyAvatar} />
-            <CharacterAvatarHead src={yangAvatar} />
-            <CharacterAvatarHead src={urienAvatar} />
-            <CharacterAvatarHead src={goukiAvatar} />
-            <CharacterAvatarHead src={oroAvatar} />
-            <CharacterAvatarHead src={ryuAvatar} />
-            <CharacterAvatarHead src={ibukiAvatar} />
-            <CharacterAvatarHead src={elenaAvatar} />
-            <CharacterAvatarHead src={necroAvatar} />
-            <CharacterAvatarHead src={hugoAvatar} />
-            <CharacterAvatarHead src={alexAvatar} />
-            <CharacterAvatarHead src={qAvatar} />
-            <CharacterAvatarHead src={remyAvatar} />
-            <CharacterAvatarHead src={twelveAvatar} />
-            <CharacterAvatarHead src={seanAvatar} />
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <CharacterAvatarCell src={chunAvatar} />
-            <MatchCell>-</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>8</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={yunAvatar} />
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={kenAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={makotoAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>8</MatchCell>
-            <MatchCell>7.5</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={dudleyAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={yangAvatar} />
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={goukiAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={urienAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={oroAvatar} />
-            <MatchCell>3</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={ryuAvatar} />
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>7</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={ibukiAvatar} />
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={elenaAvatar} />
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>7.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={necroAvatar} />
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={hugoAvatar} />
-            <MatchCell>3 </MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>2.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-          </tr>
+    <tr>
+      <CharacterAvatarCell src={imgSrc} />
+      {data.map((number: string, key) => {
+        return (
+          <MatchupCell
+            //headCharacter={headCharacter}
+            //rowCharacter={key}
+            key={key}
+          >
+            {number}
+          </MatchupCell>
+        );
+      })}
+      <CharacterAvatarCell src={imgSrc} />
+    </tr>
+  );
+};
 
-          <tr>
-            <CharacterAvatarCell src={alexAvatar} />
-            <MatchCell>3 </MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>6</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={qAvatar} />
-            <MatchCell>3</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>2</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>5.5</MatchCell>
-            <MatchCell>6</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={remyAvatar} />
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>2.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>6</MatchCell>
-            <MatchCell>5.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={twelveAvatar} />
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>3</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>—</MatchCell>
-            <MatchCell>5.5</MatchCell>
-          </tr>
-          <tr>
-            <CharacterAvatarCell src={seanAvatar} />
-            <MatchCell>2</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>3.5</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>4.5</MatchCell>
-            <MatchCell>—</MatchCell>
-          </tr>
-        </tbody>
-      </table>
+const MatchupTableBody = ({ chart }: { chart: Array<Array<string>> }) => {
+  return (
+    <tbody>
+      {charactersImages.map((image, key) => {
+        return (
+          <MatchTableRow
+            imgSrc={image}
+            //headCharacter={key}
+            key={key}
+            data={chart[key]}
+          />
+        );
+      })}
+      <tr>
+        <th className="max-w-12 min-w-12" />
+        {charactersImages.map((image, key) => {
+          return <CharacterAvatarCell key={key} src={image} />;
+        })}
+      </tr>
+    </tbody>
+  );
+};
+const getChart = (value: string) => {
+  switch (value) {
+    case "The Riddler":
+      return theRiddlerChart;
+    case "Matsuken":
+      return matsukenChart;
+    default:
+      return theRiddlerChart;
+  }
+};
+
+export const Matchups = () => {
+  const [matchupSelectValue, setMatchupSelectValue] =
+    useState<string>("The Riddler");
+
+  return (
+    <div className="flex flex-col items-center gap-4 bg-gray-800 py-24">
+      <h1 className="text-4xl font-bold text-center text-white">
+        MATCHUP CHARTS
+      </h1>
+      <select
+        id="matchups"
+        name="cars"
+        className="w-1/4 bg-green-500 outline-none p-4 text-xl mt-8 font-bold"
+        value={matchupSelectValue}
+        onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+          setMatchupSelectValue(e.target.value);
+        }}
+      >
+        <option value="The Riddler" className="font-bold">
+          The Riddler
+        </option>
+        <option value="Matsuken" className="font-bold">
+          Matsuken (Replace Holder)
+        </option>
+      </select>
+      <div className="flex justify-center mt-4 mb-4">
+        <table className="p-2">
+          <thead>
+            <tr>
+              <th className="max-w-12 min-w-12" />
+              {charactersImages.map((image, key) => {
+                return <CharacterAvatarHead key={key} src={image} />;
+              })}
+            </tr>
+          </thead>
+          <MatchupTableBody chart={getChart(matchupSelectValue)} />
+        </table>
+      </div>
     </div>
   );
 };
