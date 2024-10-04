@@ -59,7 +59,7 @@ const CharacterSelection = () => {
   };
 
   return (
-    <div className="justify-center flex w-[768px] h-[448px]">
+    <div className="justify-center flex w-[768px] h-[448px] mt-8">
       <div className="w-[768px] z-[1] relative">
         <div className="z-30 w-[768px] absolute top-0 left-0">
           <img src={interfaceImg} className="w-[768px] h-[448px]" />
