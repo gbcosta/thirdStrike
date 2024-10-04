@@ -60,9 +60,8 @@ const CharacterSelection = () => {
   };
 
   return (
-    <div className="justify-center flex">
+    <div className="justify-center flex w-[768px] h-[448px]">
       <div className="w-[768px] z-[1] relative">
-        <img src={selectImg} className="w-[768px]" />
         <div className="z-30 w-[768px] absolute top-0 left-0">
           <img src={interfaceImg} className="w-[768px] h-[448px]" />
         </div>
@@ -163,12 +162,13 @@ const CharacterSelection = () => {
         />
         <img
           src={portrait}
-          className="z-0 [clip-path:polygon(26.3%_9%,100%_9%,100%_100%,26.3%_100%)]
+          className="z-0 
                     absolute w-[970px] h-[492px] left-[-202px] top-[-44px] bg-clip-content"
         />
       </div>
     </div>
   );
+  // [clip-path:polygon(26.3%_9%,100%_9%,100%_100%,26.3%_100%)]
 };
 
 const IndexButton = () => {
@@ -200,10 +200,7 @@ const IndexButton = () => {
 
 export const Index = () => {
   return (
-    <div className="w-screen min-h-screen bg-gray-800 pt-10 flex flex-col items-center">
-      <h1 className="mb-4 mt-8 text-white text-4xl font-bold">
-        The Riddler's Guides
-      </h1>
+    <div className="w-screen min-h-screen bg-zinc-950 pt-10 flex flex-col items-center">
       <CharacterSelection />
       <div className="flex flex-row gap-12 mt-8 w-full justify-center">
         <IndexButton />
