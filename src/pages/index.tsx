@@ -1,4 +1,3 @@
-import selectImg from "../assets/character selection/select.png";
 import interfaceImg from "../assets/character selection/interface.png";
 import akumaPortrait from "../assets/character selection/akumaScreen.gif";
 import chunPortrait from "../assets/character selection/cunScreen.gif";
