@@ -25,7 +25,7 @@ const Menu = () => {
         </Link>
       </div>
 
-      <div className="flex flex-row ml-16 font-bold cursor-pointer gap-6 text-xl">
+      <div className="flex flex-row ml-16 font-bold cursor-pointer gap-12 text-xl">
         <ButtonMenu to={"/thirdStrike/guides"}>GUIDES</ButtonMenu>
         <ButtonMenu to={"/thirdStrike/recursos"}>RECURSOS</ButtonMenu>
         <ButtonMenu to={"/thirdStrike/matchups"}>MATCHUPS</ButtonMenu>
