@@ -20,12 +20,12 @@ const Menu = () => {
           to="/thirdStrike"
           className="ml-4 cursor-pointer text-2xl flex flex-row gap-6 items-center"
         >
-          <img src={bwLogo} className="w-24" />
+          <img src={bwLogo} className="w-20" />
           <span className="text-4xl text-[#3B3FE9]">BLUE WOLVES</span>
         </Link>
       </div>
 
-      <div className="flex flex-row ml-16 font-bold cursor-pointer gap-16 text-2xl">
+      <div className="flex flex-row ml-16 font-bold cursor-pointer gap-12 text-2xl">
         <ButtonMenu to={"/thirdStrike/guides"}>GUIDES</ButtonMenu>
         <ButtonMenu to={"/thirdStrike/recursos"}>RECURSOS</ButtonMenu>
         <ButtonMenu to={"/thirdStrike/matchups"}>MATCHUPS</ButtonMenu>
