@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Regular";
+  src:
+    local("ChiQuel-reegular"),
+    url("./assets/fonts/ChiQuel 1.otf") format("truetype");
+}

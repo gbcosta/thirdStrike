@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        pRegular: ["regular"],
+      },
       spacing: {
         alexLeft: "398px",
         alexTop: "282px",
