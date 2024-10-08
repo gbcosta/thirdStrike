@@ -8,3 +8,9 @@
     local("ChiQuel-reegular"),
     url("./assets/fonts/ChiQuel 1.otf") format("truetype");
 }
+
+@font-face {
+  font-family: "Metropolis";
+  src: ("./assets/fonts/Metropolis-Black/Metropolis-Regular.otf")
+    format("truetype");
+}

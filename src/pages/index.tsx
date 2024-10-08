@@ -170,7 +170,7 @@ const CharacterSelection = () => {
   // [clip-path:polygon(26.3%_9%,100%_9%,100%_100%,26.3%_100%)]
 };
 
-const IndexButton = () => {
+const IndexButton = ({ children }: { children: string }) => {
   const [image, setImage] = useState(kenSf2Idle);
   return (
     <div
@@ -182,16 +182,18 @@ const IndexButton = () => {
         e.preventDefault();
         setImage(kenSf2Idle);
       }}
-      className="max-h-48 max-w-72 w-full h-48 bg-white relative overflow-hidden flex items-end rounded-sm cursor-pointer group"
+      className="max-h-48 max-w-72 w-full h-48 bg-white relative overflow-hidden
+            font-metropolis flex justify-center items-end rounded-sm cursor-pointer group
+            border-[3px] border-zinc-300 border-solid"
     >
       <img
         src={image}
         className="absolute z-0 object-cover w-full h-full rounded-sm
                 transition-transform duration-500 ease-in-out group-hover:scale-110"
       />
-      <div className="z-0 absolute bg-black h-full w-full opacity-50 top-0 left-0" />
+      <div className="z-0 absolute bg-black h-full w-full opacity-60 top-0 left-0" />
       <span className="text-white z-50 relative p-2 text-xl font-bold">
-        Scare's Content
+        {children}
       </span>
     </div>
   );
@@ -202,9 +204,9 @@ export const Index = () => {
     <div className="w-screen min-h-screen bg-zinc-950 pt-10 flex flex-col items-center">
       <CharacterSelection />
       <div className="flex flex-row gap-12 mt-8 w-full justify-center">
-        <IndexButton />
-        <IndexButton />
-        <IndexButton />
+        <IndexButton>Scare's Content</IndexButton>
+        <IndexButton>Scare's Content</IndexButton>
+        <IndexButton>Scare's Content</IndexButton>
       </div>
     </div>
   );
