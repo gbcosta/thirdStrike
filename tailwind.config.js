@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         pRegular: ["regular"],
-        metropolis: ["Metropolis"],
+        metropolis: ["Regular"],
       },
       spacing: {
         alexLeft: "398px",

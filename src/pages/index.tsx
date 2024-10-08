@@ -184,7 +184,7 @@ const IndexButton = ({ children }: { children: string }) => {
       }}
       className="max-h-48 max-w-72 w-full h-48 bg-white relative overflow-hidden
             font-metropolis flex justify-center items-end rounded-sm cursor-pointer group
-            border-[3px] border-zinc-300 border-solid"
+            border-[2px] border-[#3B3FE9] border-solid "
     >
       <img
         src={image}
@@ -192,7 +192,7 @@ const IndexButton = ({ children }: { children: string }) => {
                 transition-transform duration-500 ease-in-out group-hover:scale-110"
       />
       <div className="z-0 absolute bg-black h-full w-full opacity-60 top-0 left-0" />
-      <span className="text-white z-50 relative p-2 text-xl font-bold">
+      <span className="text-white z-50 relative p-2 text-[2pt] font-bold mb-2">
         {children}
       </span>
     </div>
