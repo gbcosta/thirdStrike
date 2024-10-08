@@ -59,10 +59,10 @@ const CharacterSelection = () => {
   };
 
   return (
-    <div className="justify-center flex w-[768px] h-[448px] mt-8">
-      <div className="w-[768px] z-[1] relative">
-        <div className="z-30 w-[768px] absolute top-0 left-0">
-          <img src={interfaceImg} className="w-[768px] h-[448px]" />
+    <div className="justify-center flex w-[960px] h-[560px] mt-32">
+      <div className="w-full z-[1] relative">
+        <div className="z-30 w-[768px] absolute top-0 left-[230px]">
+          <img src={interfaceImg} className="w-[960px] h-[560px]" />
         </div>
         <a
           onMouseOver={onMouseOverHandler}
@@ -162,7 +162,7 @@ const CharacterSelection = () => {
         <img
           src={portrait}
           className="z-0 
-                    absolute w-[970px] h-[492px] left-[-202px] top-[-44px] bg-clip-content"
+                    absolute w-[1212px] h-[615px] left-[-300px] top-[-60px] bg-clip-content"
         />
       </div>
     </div>
