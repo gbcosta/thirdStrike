@@ -6,11 +6,11 @@
   font-family: "Regular";
   src:
     local("ChiQuel-reegular"),
-    url("./assets/fonts/ChiQuel 1.otf") format("truetype");
+    url("./assets/fonts/ChiQuel 1.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Regular";
-  src: ("./assets/fonts/Metropolis-Black/Metropolis-Regular.otf")
-    format("truetype");
+  font-family: "Metropolis-Black";
+  src: url("./assets/fonts/Metropolis-Black/Metropolis-Black.otf")
+    format("opentype");
 }
