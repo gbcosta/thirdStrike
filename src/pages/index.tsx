@@ -24,6 +24,9 @@ import mapBrasil from "../assets/map-brasil.png";
 import mapWorld from "../assets/mapWorld.png";
 import selector from "../assets/selector.gif";
 
+import muS from "../assets/mu1.png";
+import muE from "../assets/mu2.png";
+
 import { MouseEvent, useState } from "react";
 
 const characterSelectionData: Map<
@@ -153,10 +156,14 @@ const IndexButton = ({
   children,
   img,
   zoomImg,
+  top,
+  height,
 }: {
   children: string;
   img: string;
   zoomImg: string;
+  top?: number;
+  height?: string;
 }) => {
   const [image, setImage] = useState(img);
   return (
@@ -174,12 +181,13 @@ const IndexButton = ({
             border-[2px] border-[#3B3FE9] border-solid "
     >
       <img
+        style={{ top: top ?? 0, height: height ?? "100%" }}
         src={image}
-        className="absolute z-0 object-cover w-full h-full rounded-sm
+        className="absolute z-0 object-cover w-full rounded-sm
                     transition-transform duration-500 ease-in-out group-hover:scale-110"
       />
-      <div className="z-0 absolute bg-black h-full w-full opacity-60 top-0 left-0 " />
-      <span className="text-white z-50 relative p-2 text-[1.5rem] font-bold mb-2 font-metropolis">
+      <div className="z-0 absolute bg-black h-full w-full opacity-60 left-0 " />
+      <span className="text-white z-50 relative p-2 text-[1.25rem] font-bold  font-metropolis">
         {children}
       </span>
     </div>
@@ -194,10 +202,10 @@ export const Index = () => {
         <IndexButton img={kenSf2Idle} zoomImg={kenSf2Win}>
           Conteúdo do Scare
         </IndexButton>
-        <IndexButton img={mapBrasil} zoomImg={mapWorld}>
+        <IndexButton img={muE} zoomImg={muS}>
           Conteúdo/Recursos
         </IndexButton>
-        <IndexButton img={mapBrasil} zoomImg={mapWorld}>
+        <IndexButton top={-56} img={mapBrasil} zoomImg={mapWorld} height="130%">
           Conteúdo Externo
         </IndexButton>
       </div>
