@@ -1,8 +1,5 @@
 import leftImg from "../assets/sobre/q.png";
 import { useState, useEffect } from "react";
-const Text = ({ bgColor }: { bgColor: "black" | "white" }) => {
-  return <div></div>;
-};
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
