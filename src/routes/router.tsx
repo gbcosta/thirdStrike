@@ -4,8 +4,9 @@ import Guides from "../pages/guides";
 import { ErrorPage } from "../pages/error";
 import { MarkdownStyle } from "../components/markdownStyle";
 import KenGuide from "../pages/kenGuide.mdx";
-import { Matchups } from "../pages/matchups";
+//i mport { Matchups } from "../pages/matchups";
 import { Index } from "../pages";
+import { Contato } from "../pages/contato";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
         element: <Guides />,
       },
       {
-        path: "/thirdStrike/matchups",
-        element: <Matchups />,
+        path: "/thirdStrike/contato",
+        element: <Contato />,
       },
       {
         path: "/thirdStrike/guides/ken",

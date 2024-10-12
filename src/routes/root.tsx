@@ -3,10 +3,12 @@ import Menu from "../components/menu.tsx";
 
 const Root = () => {
   return (
-    <div>
+    <>
       <Menu />
-      <Outlet />
-    </div>
+      <div className="w-full justify-center flex bg-black">
+        <Outlet />
+      </div>
+    </>
   );
 };
 

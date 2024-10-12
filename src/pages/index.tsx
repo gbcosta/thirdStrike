@@ -117,13 +117,12 @@ const CharacterSelection = () => {
     characterSelectionData.get("alex"),
   );
   return (
-    <div className="justify-center flex w-[960px] h-[560px] mt-[4.5rem]">
+    <div className="justify-center flex w-[960px] h-[560px]">
       <div className="w-full z-[1] relative">
         <div className="z-30 w-[768px] absolute top-0 left-[230px]">
           <img src={interfaceImg} className="w-[960px] h-[560px]" />
         </div>
         {Array.from(characterSelectionData.entries()).map(([key, value]) => {
-          console.log(value);
           return (
             <CharacterIcon
               setCharacterData={setCharacterData}
@@ -196,18 +195,25 @@ const IndexButton = ({
 
 export const Index = () => {
   return (
-    <div className="w-screen min-h-screen bg-zinc-950 pt-10 flex flex-col items-center">
-      <CharacterSelection />
-      <div className="flex flex-row gap-12 mt-8 w-full justify-center">
-        <IndexButton img={kenSf2Idle} zoomImg={kenSf2Win}>
-          Conteúdo do Scare
-        </IndexButton>
-        <IndexButton img={muE} zoomImg={muS}>
-          Conteúdo/Recursos
-        </IndexButton>
-        <IndexButton top={-56} img={mapBrasil} zoomImg={mapWorld} height="130%">
-          Conteúdo Externo
-        </IndexButton>
+    <div className="max-w-[1720px] 2xl:w-[1320px]">
+      <div className="w-full min-h-screen bg-black flex flex-col items-center pt-32">
+        <CharacterSelection />
+        <div className="flex flex-row gap-12 mt-8 w-full justify-center">
+          <IndexButton img={kenSf2Idle} zoomImg={kenSf2Win}>
+            Conteúdo do Scare
+          </IndexButton>
+          <IndexButton img={muE} zoomImg={muS}>
+            Conteúdo/Recursos
+          </IndexButton>
+          <IndexButton
+            top={-56}
+            img={mapBrasil}
+            zoomImg={mapWorld}
+            height="130%"
+          >
+            Conteúdo Externo
+          </IndexButton>
+        </div>
       </div>
     </div>
   );

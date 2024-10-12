@@ -1,11 +1,9 @@
 import "./App.css";
-import Menu from "./components/menu.tsx";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
+
 function App() {
-  return (
-    <>
-      <Menu />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
