@@ -1,4 +1,6 @@
-import leftImg from "../assets/sobre/q.png";
+import urienImg from "../assets/sobre/q.png";
+import urienShadowImg from "../assets/sobre/q-shadow.png";
+
 import { useState, useEffect } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaDiscord } from "react-icons/fa";
@@ -32,7 +34,7 @@ const Card = ({ children }: { children: Array<JSX.Element> }) => {
   return (
     <div
       className="bg-gray-200 p-4 flex border-zinc-300 border-[1px] border-solid
-            flex-col items-center justify-center w-[200px] h-[200px]"
+            flex-col items-center justify-center w-[250px] h-[250px] z-50"
     >
       {children}
     </div>
@@ -57,7 +59,8 @@ export const Contato = () => {
     <div className="w-full pt-32 bg-black font-metropolis min-h-screen flex flex-col">
       <h1 className="text-5xl text-white text-center">Contato</h1>
       <div className="flex flex-col items-center mt-4 relative">
-        <img src={leftImg} className="max-w-[300px]" />
+        <img src={urienImg} className="max-w-[300px]" />
+        <img src={urienShadowImg} className="absolute top-[318px] z-10 " />
         <div
           style={{
             borderRight: `${windowDimensions.width / 2 - 125}px solid transparent`,
@@ -68,22 +71,22 @@ export const Contato = () => {
         ></div>
       </div>
       <div className="bg-white flex-grow w-full flex">
-        <div className="flex flex-row text-black bg-white w-full justify-center gap-24 mt-4">
+        <div className="flex flex-row text-black bg-white w-full justify-center gap-24 mt-4 ">
           <Card>
-            <FaDiscord className="text-7xl text-[#7289da]" />
-            <p> scarecrow5676.</p>
+            <FaDiscord className="text-8xl text-[#7289da]" />
+            <p className="text-xl"> scarecrow5676.</p>
           </Card>
           <Card>
-            <KofiIcon className="text-7xl text-pink-400" />
-            <p>KO-FI</p>
+            <KofiIcon className="text-8xl text-pink-400" />
+            <p className="text-xl">KO-FI</p>
           </Card>
           <Card>
-            <MdEmail className="text-7xl text-blue-500" />
-            <p>Email</p>
+            <MdEmail className="text-8xl text-blue-500" />
+            <p className="text-xl">Email</p>
           </Card>
           <Card>
-            <FaYoutube className="text-7xl text-red-600" />
-            <p>Youtube</p>
+            <FaYoutube className="text-8xl text-red-600 " />
+            <p className="text-xl">Youtube</p>
           </Card>
         </div>
       </div>
