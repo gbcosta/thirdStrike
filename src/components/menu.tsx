@@ -15,7 +15,7 @@ const Menu = () => {
   return (
     <div
       className="font-bold text-white w-screen max-h-36 py-3 flex
-            items-center shadow-md fixed z-40 bg-[#0b0b3d] font-pRegular justify-center"
+            items-center shadow-md fixed bg-[#0b0b3d] font-pRegular justify-center z-[100]"
     >
       <div className="flex flex-row justify-between items-center 2xl:w-[1320px]">
         <div>

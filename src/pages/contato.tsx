@@ -34,7 +34,7 @@ const Card = ({ children }: { children: Array<JSX.Element> }) => {
   return (
     <div
       className="bg-gray-200 p-4 flex border-zinc-300 border-[1px] border-solid
-            flex-col items-center justify-center w-[250px] h-[250px] z-50"
+            flex-col items-center justify-center w-[200px] h-[200px] z-50"
     >
       {children}
     </div>
@@ -60,7 +60,10 @@ export const Contato = () => {
       <h1 className="text-5xl text-white text-center">Contato</h1>
       <div className="flex flex-col items-center mt-4 relative">
         <img src={urienImg} className="max-w-[300px]" />
-        <img src={urienShadowImg} className="absolute top-[318px] z-10 " />
+        <img
+          src={urienShadowImg}
+          className="absolute top-[318px] z-10 h-[600px] w-[230px]"
+        />
         <div
           style={{
             borderRight: `${windowDimensions.width / 2 - 125}px solid transparent`,
