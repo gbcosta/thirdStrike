@@ -62,7 +62,8 @@ export const Contato = () => {
         <img src={urienImg} className="max-w-[300px]" />
         <img
           src={urienShadowImg}
-          className="absolute top-[318px] z-10 h-[600px] w-[230px]"
+          style={{ imageRendering: "crisp-edges" }}
+          className="absolute top-[318px] z-10 h-[600px] w-[230px] "
         />
         <div
           style={{
@@ -74,7 +75,7 @@ export const Contato = () => {
         ></div>
       </div>
       <div className="bg-white flex-grow w-full flex">
-        <div className="flex flex-row text-black bg-white w-full justify-center gap-24 mt-4 ">
+        <div className="flex flex-row text-black bg-white w-full justify-center gap-24">
           <Card>
             <FaDiscord className="text-8xl text-[#7289da]" />
             <p className="text-xl"> scarecrow5676.</p>
