@@ -14,8 +14,8 @@ const ButtonMenu = ({ to, children }: { to: string; children: string }) => {
 const Menu = () => {
   return (
     <div
-      className="font-bold text-white w-screen max-h-36 py-3 flex
-            items-center shadow-md fixed bg-[#0b0b3d] font-pRegular justify-center z-[100]"
+      className="font-bold text-white w-screen h-20 py-3 flex top-0
+            items-center shadow-md sticky bg-[#0b0b3d] font-pRegular justify-center z-[100]"
     >
       <div className="flex flex-row justify-between items-center 2xl:w-[1320px]">
         <div>
@@ -29,8 +29,8 @@ const Menu = () => {
         </div>
 
         <div className="flex flex-row mr-[-7rem] font-bold cursor-pointer gap-12 text-[3.5pt]">
-          <ButtonMenu to={"/thirdStrike/guides"}>FAQ</ButtonMenu>
-          <ButtonMenu to={"/thirdStrike/recursos"}>SOBRE NÒS</ButtonMenu>
+          <ButtonMenu to={"/thirdStrike/faq"}>FAQ</ButtonMenu>
+          <ButtonMenu to={"/thirdStrike/sobrenos"}>SOBRE NÒS</ButtonMenu>
           <ButtonMenu to={"/thirdStrike/contato"}>CONTATO</ButtonMenu>
         </div>
       </div>
