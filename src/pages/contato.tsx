@@ -21,7 +21,7 @@ export const Contato = () => {
         <div className="flex flex-row text-black w-full justify-center gap-24">
           <Card>
             <FaDiscord className="text-8xl text-[#7289da]" />
-            <p className="text-xl"> scarecrow5676.</p>
+            <p className="text-xl"> scarecrow5676</p>
           </Card>
           <Card>
             <KofiIcon className="text-8xl text-pink-400" />
@@ -29,11 +29,11 @@ export const Contato = () => {
           </Card>
           <Card>
             <MdEmail className="text-8xl text-blue-500" />
-            <p className="text-xl">Email</p>
+            <p className="text-xl">EMAIL</p>
           </Card>
           <Card>
             <FaYoutube className="text-8xl text-red-600 " />
-            <p className="text-xl">Youtube</p>
+            <p className="text-xl">YOUTUBE</p>
           </Card>
         </div>
       </div>
